@@ -15,8 +15,11 @@ def getSeries(df, var):
 This is a function to use plotly for seasonal decomposition
 """
 
+import imp
 from statsmodels.tsa.seasonal import seasonal_decompose
 import plotly.tools as tls
+from plotly.subplots import make_subplots
+import plotly.graph_objects as go
 
 def plotSeasonalDecompose(
     x,
