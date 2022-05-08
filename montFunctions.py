@@ -58,3 +58,22 @@ def plotSeasonalDecompose(
             )
 
     return fig
+
+"""
+This is a function to create a triangle correlation heatmap from a dataframe
+"""
+# import modules
+import matplotlib.pyplot as plt
+#import pandas as pd
+import seaborn as sns
+import numpy as np
+
+def makeCorrPlot(df):
+    # import file with data
+    data = df
+    # creating mask
+    mask = np.triu(np.ones_like(data.corr()))
+    # plotting a triangle correlation heatmap
+    dataplot = sns.heatmap(data.corr(), cmap="YlGnBu", annot=True, mask=mask)    
+    # displaying heatmap
+    plt.show()
